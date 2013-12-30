@@ -29,6 +29,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>it3xl.com.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,8 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WeakDelegate.cs" />
+    <Compile Include="InstanceStrongDelegateState.cs" />
+    <Compile Include="IStrongDelegateState.cs" />
+    <Compile Include="IWeakDelegateState.cs" />
+    <Compile Include="StaticDelegateState.cs" />
+    <Compile Include="WeakAction.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeakAction.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeakDelegateBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InstanceWeakDelegateState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="it3xl.com.snk" />
+    <None Include="WeakAction.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WeakAction.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

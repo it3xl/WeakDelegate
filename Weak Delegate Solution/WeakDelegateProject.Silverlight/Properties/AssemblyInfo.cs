@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WeakDelegateProject.Silverlight")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("it3xl.com WeakDelegateProject for the Silverlight")]
+[assembly: AssemblyDescription("WeakDelegateProject from the it3xl.com - http://weakdelegate.codeplex.com/")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WeakDelegateProject.Silverlight")]
+[assembly: AssemblyCompany("it3xl.com")]
+[assembly: AssemblyProduct("it3xl.com WeakDelegateProject for the Silverlight")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("it3xl.com WeakDelegateProject")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

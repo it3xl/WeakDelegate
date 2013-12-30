@@ -45,6 +45,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>it3xl.com.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="System.Windows" />
@@ -57,10 +63,31 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegate.cs">
-      <Link>WeakDelegate.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\InstanceStrongDelegateState.cs">
+      <Link>InstanceStrongDelegateState.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\InstanceWeakDelegateState.cs">
+      <Link>InstanceWeakDelegateState.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\IStrongDelegateState.cs">
+      <Link>IStrongDelegateState.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\IWeakDelegateState.cs">
+      <Link>IWeakDelegateState.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\StaticDelegateState.cs">
+      <Link>StaticDelegateState.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\WeakAction.cs">
+      <Link>WeakAction.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegateBase.cs">
+      <Link>WeakDelegateBase.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="it3xl.com.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E10F6048-AECE-4FCE-8E3B-3A8095AD5813}</ProjectGuid>
+    <ProjectGuid>{6A65807A-C1EA-4012-8852-CC0041EF3BCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeakDelegate.Test</RootNamespace>
-    <AssemblyName>WeakDelegate.Test</AssemblyName>
+    <RootNamespace>WeakDelegateProject.Test</RootNamespace>
+    <AssemblyName>WeakDelegateProject.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,8 +50,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Scaffold.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeakDelegateProject.NetFramework\WeakDelegateProject.NetFramework.csproj">
+      <Project>{fdc3b499-6d40-41c9-8488-8ebc08306239}</Project>
+      <Name>WeakDelegateProject.NetFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
