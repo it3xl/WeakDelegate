@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Reflection;
 
-namespace It3xl.WeakDelegateProject
+namespace It3xl.WeakDelegateProject.States
 {
 	public interface IStrongDelegateState
 	{

@@ -63,26 +63,32 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\WeakDelegateProject.NetFramework\InstanceStrongDelegateState.cs">
-      <Link>InstanceStrongDelegateState.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\States\DelegateStateBase.cs">
+      <Link>States\DelegateStateBase.cs</Link>
     </Compile>
-    <Compile Include="..\WeakDelegateProject.NetFramework\InstanceWeakDelegateState.cs">
-      <Link>InstanceWeakDelegateState.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\States\InstanceStrongDelegateState.cs">
+      <Link>States\InstanceStrongDelegateState.cs</Link>
     </Compile>
-    <Compile Include="..\WeakDelegateProject.NetFramework\IStrongDelegateState.cs">
-      <Link>IStrongDelegateState.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\States\InstanceWeakDelegateState.cs">
+      <Link>States\InstanceWeakDelegateState.cs</Link>
     </Compile>
-    <Compile Include="..\WeakDelegateProject.NetFramework\IWeakDelegateState.cs">
-      <Link>IWeakDelegateState.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\States\IStrongDelegateState.cs">
+      <Link>States\IStrongDelegateState.cs</Link>
     </Compile>
-    <Compile Include="..\WeakDelegateProject.NetFramework\StaticDelegateState.cs">
-      <Link>StaticDelegateState.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\States\IWeakDelegateState.cs">
+      <Link>States\IWeakDelegateState.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\States\StaticDelegateState.cs">
+      <Link>States\StaticDelegateState.cs</Link>
     </Compile>
     <Compile Include="..\WeakDelegateProject.NetFramework\WeakAction.cs">
       <Link>WeakAction.cs</Link>
     </Compile>
     <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegateBase.cs">
       <Link>WeakDelegateBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegateBase.Utils.cs">
+      <Link>WeakDelegateBase.Utils.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

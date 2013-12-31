@@ -1,7 +1,6 @@
-using System;
 using System.Reflection;
 
-namespace It3xl.WeakDelegateProject
+namespace It3xl.WeakDelegateProject.States
 {
 	public interface IWeakDelegateState
 	{

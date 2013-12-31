@@ -34,18 +34,18 @@
 			Action d = FlatNatureOfMulticastDelegate;
 
 			var u = FlatNatureOfMulticastDelegate + a;
-			Assert.IsTrue(u.GetInvocationList().Count() == 2);
+			Assert.IsTrue(u.GetInvocationList().Length == 2);
 
 			var y = b + c;
-			Assert.IsTrue(y.GetInvocationList().Count() == 2);
+			Assert.IsTrue(y.GetInvocationList().Length == 2);
 
 			var x = u + y + d;
 			var il = x.GetInvocationList();
-			Assert.IsTrue(il.Count() == 5);
+			Assert.IsTrue(il.Length == 5);
 
 			foreach (var @delegate in il)
 			{
-				Assert.IsTrue(@delegate.GetInvocationList().Count() == 1);
+				Assert.IsTrue(@delegate.GetInvocationList().Length == 1);
 			}
 		}
 	}

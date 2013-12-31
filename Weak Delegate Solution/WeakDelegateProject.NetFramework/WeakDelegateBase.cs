@@ -1,49 +1,44 @@
-﻿namespace It3xl.WeakDelegateProject
+﻿using System;
+using System.Collections.Generic;
+using It3xl.WeakDelegateProject.States;
+
+namespace It3xl.WeakDelegateProject
 {
 	// TODO.it3xl.com: Write comments everywhere.
 	
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-
-	public abstract class WeakDelegateBase
+	public abstract partial class WeakDelegateBase
 	{
 		private List<IWeakDelegateState> _weakItems;
 
 		protected WeakDelegateBase(){}
 
-		protected WeakDelegateBase(Delegate inputDelegate)
+		protected WeakDelegateBase(Delegate inputDelegates)
 		{
-			var weakItem = inputDelegate.GetInvocationList()
-				.Select(el =>
-					{
-						if(el.Method.IsStatic)
-						{
-							return (IWeakDelegateState)new StaticDelegateState(el);
-						}
-						return new InstanceWeakDelegateState(el);
-					})
-				.ToList();
+			var weakItems = GetWeak(inputDelegates);
 
-			_weakItems = weakItem;
+			_weakItems = weakItems;
 		}
 
-		protected void Add(Delegate @delegate)
+		protected void Add(Delegate addingDelegates)
 		{
-			// TODO.it3xl.com: 
+			var newItems = GetStrong(addingDelegates);
+			var currentItems = GetAliveStrongItems(_weakItems);
+
+
+
 		}
 
-		protected void Remove(Delegate @delegate)
+		protected void Remove(Delegate removingDelegates)
 		{
 			// TODO.it3xl.com: 
 		}
 
 		protected void ProcessInvoke(Object[] param)
 		{
-			List<IStrongDelegateState> aliveItems;
-			RefreshAliveItems(ref _weakItems, out aliveItems);
+			List<IStrongDelegateState> currentAliveItems;
+			RefreshAliveItems(ref _weakItems, out currentAliveItems);
 
-			aliveItems.ForEach(el => el.Invoke(param));
+			currentAliveItems.ForEach(el => el.Invoke(param));
 		}
 
 		protected void ProcessInvokeAsync(Object[] param)
@@ -52,21 +47,6 @@
 			throw new NotImplementedException();
 		}
 
-		private static void RefreshAliveItems(ref List<IWeakDelegateState> weakItems, out List<IStrongDelegateState> aliveItems)
-		{
-			if (weakItems == null)
-			{
-				weakItems = new List<IWeakDelegateState>();
-			}
-
-			aliveItems = weakItems
-				.Select(el => el.GetStrongDelegateState())
-				.Where(el => el.Alive)
-				.ToList();
-			weakItems = aliveItems
-				.Select(el => el.GetWeakDelegateState())
-				.ToList();
-		}
     }
 
 }

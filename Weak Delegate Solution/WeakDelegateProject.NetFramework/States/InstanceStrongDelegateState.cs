@@ -1,14 +1,22 @@
 using System;
 using System.Reflection;
 
-namespace It3xl.WeakDelegateProject
+namespace It3xl.WeakDelegateProject.States
 {
-	internal sealed class InstanceStrongDelegateState : IStrongDelegateState
+	internal sealed class InstanceStrongDelegateState : DelegateStateBase, IStrongDelegateState
 	{
 		public InstanceStrongDelegateState(InstanceWeakDelegateState instanceWeakState)
 		{
 			Target = instanceWeakState.Target;
 			Method = instanceWeakState.Method;
+		}
+
+		public InstanceStrongDelegateState(Delegate singleMethodDelegate)
+		{
+			CheckDelegateIsSingleOrThrow(singleMethodDelegate);
+
+			Target = singleMethodDelegate.Target;
+			Method = singleMethodDelegate.Method;
 		}
 
 		public Boolean Alive { get { return Target != null; } }

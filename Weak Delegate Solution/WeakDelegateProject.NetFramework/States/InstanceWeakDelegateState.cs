@@ -1,9 +1,9 @@
 using System;
 using System.Reflection;
 
-namespace It3xl.WeakDelegateProject
+namespace It3xl.WeakDelegateProject.States
 {
-	internal sealed class InstanceWeakDelegateState : IWeakDelegateState
+	internal sealed class InstanceWeakDelegateState : DelegateStateBase, IWeakDelegateState
 	{
 		public InstanceWeakDelegateState(InstanceStrongDelegateState instanceStrongDelegateState)
 		{
@@ -11,10 +11,12 @@ namespace It3xl.WeakDelegateProject
 			Method = instanceStrongDelegateState.Method;
 		}
 
-		public InstanceWeakDelegateState(Delegate @delegate)
+		public InstanceWeakDelegateState(Delegate singleMethodDelegate)
 		{
-			WeakTarget = new WeakReference(@delegate.Target);
-			Method = @delegate.Method;
+			CheckDelegateIsSingleOrThrow(singleMethodDelegate);
+
+			WeakTarget = new WeakReference(singleMethodDelegate.Target);
+			Method = singleMethodDelegate.Method;
 		}
 
 		public Boolean Alive { get { return Target != null; } }

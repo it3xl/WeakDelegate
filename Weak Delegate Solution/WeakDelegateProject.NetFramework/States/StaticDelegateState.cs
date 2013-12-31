@@ -1,13 +1,15 @@
 using System;
 using System.Reflection;
 
-namespace It3xl.WeakDelegateProject
+namespace It3xl.WeakDelegateProject.States
 {
-	internal sealed class StaticDelegateState : IWeakDelegateState, IStrongDelegateState
+	internal sealed class StaticDelegateState : DelegateStateBase, IWeakDelegateState, IStrongDelegateState
 	{
-		public StaticDelegateState(Delegate @delegate)
+		public StaticDelegateState(Delegate singleMethodDelegate)
 		{
-			Method = @delegate.Method;
+			CheckDelegateIsSingleOrThrow(singleMethodDelegate);
+
+			Method = singleMethodDelegate.Method;
 		}
 
 		public Boolean Alive{get { return true; }}
