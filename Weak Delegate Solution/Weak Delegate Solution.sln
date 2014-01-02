@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeakDelegateProject.Silverl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeakDelegateProject.Test", "WeakDelegateProject.Test\WeakDelegateProject.Test.csproj", "{6A65807A-C1EA-4012-8852-CC0041EF3BCC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EDE2E0D0-D7C7-4EB8-9A61-B75B37453596}"
+	ProjectSection(SolutionItems) = preProject
+		CodeMap1.dgml = CodeMap1.dgml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

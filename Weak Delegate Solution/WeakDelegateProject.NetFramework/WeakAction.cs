@@ -9,8 +9,8 @@
 	public sealed class WeakAction : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -41,8 +41,8 @@
 	public sealed class WeakAction<T1> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -73,8 +73,8 @@
 	public sealed class WeakAction<T1, T2> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -105,8 +105,8 @@
 	public sealed class WeakAction<T1, T2, T3> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -137,8 +137,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -169,8 +169,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -201,8 +201,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -233,8 +233,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -265,8 +265,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -297,8 +297,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -329,8 +329,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -361,8 +361,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -393,8 +393,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -425,8 +425,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -457,8 +457,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -489,8 +489,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 
@@ -521,8 +521,8 @@
 	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : WeakDelegateBase
 	{
 		public WeakAction(){}
-		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> inputDelegates)
-			: base(inputDelegates)
+		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> inputDelegate)
+			: base(inputDelegate)
 		{
 		}
 

@@ -5,24 +5,28 @@ namespace It3xl.WeakDelegateProject.States
 {
 	internal sealed class InstanceStrongDelegateState : DelegateStateBase, IStrongDelegateState
 	{
+
 		public InstanceStrongDelegateState(InstanceWeakDelegateState instanceWeakState)
+			: base(instanceWeakState.Method)
 		{
-			Target = instanceWeakState.Target;
-			Method = instanceWeakState.Method;
+			_target = instanceWeakState.Target;
 		}
 
 		public InstanceStrongDelegateState(Delegate singleMethodDelegate)
+			: base(singleMethodDelegate.Method)
 		{
 			CheckDelegateIsSingleOrThrow(singleMethodDelegate);
 
-			Target = singleMethodDelegate.Target;
-			Method = singleMethodDelegate.Method;
+			_target = singleMethodDelegate.Target;
 		}
 
 		public Boolean Alive { get { return Target != null; } }
-		public MethodInfo Method { get; private set; }
 
-		public Object Target { get; private set; }
+		private readonly Object _target;
+		public Object Target
+		{
+			get { return _target; }
+		}
 
 		public IWeakDelegateState GetWeakDelegateState()
 		{

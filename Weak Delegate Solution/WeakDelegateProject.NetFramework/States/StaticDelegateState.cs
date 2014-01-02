@@ -6,14 +6,12 @@ namespace It3xl.WeakDelegateProject.States
 	internal sealed class StaticDelegateState : DelegateStateBase, IWeakDelegateState, IStrongDelegateState
 	{
 		public StaticDelegateState(Delegate singleMethodDelegate)
+			: base(singleMethodDelegate.Method)
 		{
 			CheckDelegateIsSingleOrThrow(singleMethodDelegate);
-
-			Method = singleMethodDelegate.Method;
 		}
 
 		public Boolean Alive{get { return true; }}
-		public MethodInfo Method { get; set; }
 
 		public IStrongDelegateState GetStrongDelegateState()
 		{
