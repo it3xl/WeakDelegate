@@ -4,10 +4,14 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
+using System;
+
 namespace It3xl.WeakDelegateProject
 {
-	using System;
 
+	// !!!
+	// Auto generated code. To change it use the WeackAction.tt file.
+	// !!!
 
 <# 
 // The amount of the Action delegates in the .NET Framework.
@@ -32,14 +36,18 @@ for(var i = 0; i < actionsCount; i++)
 		{
 		}
 
-		public void Add(Action<#= typesList #> delegatesForAdding)
+		public WeakAction<#= typesList #> Add(Action<#= typesList #> delegatesForAdding)
 		{
 			base.Add(delegatesForAdding);
+
+			return this;
 		}
 
-		public void Remove(Action<#= typesList #> delegatesForRemoving)
+		public WeakAction<#= typesList #> Remove(Action<#= typesList #> delegatesForRemoving)
 		{
 			base.Add(delegatesForRemoving);
+
+			return this;
 		}
 
 		public void Invoke(<#= GetTypedParameters(i) #>)
@@ -47,10 +55,10 @@ for(var i = 0; i < actionsCount; i++)
 			ProcessInvoke(<#= GetParameters(i) #>);
 		}
 
-		//private void InvokeAsync(<#= GetTypedParameters(i) #>)
-		//{
-		//	ProcessInvokeAsync(<#= GetParameters(i) #>);
-		//}
+		public void InvokeAsync(<#= GetTypedParameters(i) #>)
+		{
+			ProcessInvokeAsync(<#= GetParameters(i) #>);
+		}
 	}
 
 <# } #>

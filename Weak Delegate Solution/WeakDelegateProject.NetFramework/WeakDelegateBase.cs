@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using It3xl.WeakDelegateProject.States;
 
 namespace It3xl.WeakDelegateProject
@@ -43,18 +44,23 @@ namespace It3xl.WeakDelegateProject
 				.ToList();
 		}
 
-		protected void ProcessInvoke(Object[] param)
+		private void InvokeRaw(Object[] param, Action<SendOrPostCallback, Object> invoker)
 		{
 			List<IStrongDelegateState> currentAliveItems;
 			RefreshAliveItems(ref _weakItems, out currentAliveItems);
 
-			currentAliveItems.ForEach(el => el.Invoke(param));
+			currentAliveItems.ForEach(el => invoker(p => el.Invoke((Object[])p), param));
+		}
+
+		protected void ProcessInvoke(Object[] param)
+		{
+			InvokeRaw(param, (p, state) => p(state));
 		}
 
 		protected void ProcessInvokeAsync(Object[] param)
 		{
-			// TODO.it3xl.com: Do the Asynchrony and a Task's support.
-			throw new NotImplementedException();
+			var syncContext = SynchronizationContext.Current ?? new SynchronizationContext();
+			InvokeRaw(param, syncContext.Post);
 		}
 
     }

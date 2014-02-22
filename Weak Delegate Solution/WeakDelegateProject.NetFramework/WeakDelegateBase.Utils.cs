@@ -41,11 +41,6 @@ namespace It3xl.WeakDelegateProject
 
 		private static void RefreshAliveItems(ref List<IWeakDelegateState> weakItems, out List<IStrongDelegateState> currentAliveItems)
 		{
-			if (weakItems == null)
-			{
-				weakItems = new List<IWeakDelegateState>();
-			}
-
 			currentAliveItems = GetAliveStrongItems(weakItems);
 			weakItems = currentAliveItems
 				.Select(el => el.GetWeakDelegateState())
@@ -54,6 +49,11 @@ namespace It3xl.WeakDelegateProject
 
 		private static List<IStrongDelegateState> GetAliveStrongItems(List<IWeakDelegateState> weakItems)
 		{
+			if (weakItems == null)
+			{
+				return new List<IStrongDelegateState>();
+			}
+
 			var aliveItems = weakItems
 				.Select(el => el.GetStrongDelegateState())
 				.Where(el => el.Alive)
