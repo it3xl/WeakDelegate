@@ -4,64 +4,67 @@ namespace WeakDelegateProject.Test
 {
 	public class Scaffold
 	{
-		private static readonly Object Locker = new Object();
+		private readonly Object _locker = new Object();
 
-		public static readonly Scaffold Current = new Scaffold();
-		private static int _counter;
+		public Int32 InvokeCount { get; set; }
 
-		public static Int32 Counter
+		public static void IncreaseCounter(Scaffold scaffold)
 		{
-			get { return _counter; }
-		}
-
-		public static void IncreaseCounter()
-		{
-			lock (Locker)
+			lock (scaffold._locker)
 			{
-				_counter++;
+				scaffold.InvokeCount++;
 			}
 		}
 
-		public static void EmptyCounter()
+		public void EmptyCounter()
 		{
-			lock (Locker)
+			lock (_locker)
 			{
-				_counter = 0;
+				InvokeCount = 0;
 			}
 		}
 
-		public static Int32 GetAndEmptyCounter()
+		public Int32 GetAndEmptyCounter()
 		{
-			var counter = Counter;
+			var counter = InvokeCount;
 			EmptyCounter();
 
 			return counter;
 		}
 
+
 		public static void SomeStaticMethod()
 		{
-			IncreaseCounter();
+			throw new NotImplementedException("This method is not for a invoking.");
 		}
-		public static void SomeStaticMethod(Int32 i)
+		public static void SomeStaticMethod(Scaffold scaffold)
 		{
-			IncreaseCounter();
+			IncreaseCounter(scaffold);
 		}
-		public static void SomeStaticMethod(String s)
+		public static void SomeStaticMethod(Int32 i, Scaffold scaffold)
 		{
-			IncreaseCounter();
+			IncreaseCounter(scaffold);
+		}
+		public static void SomeStaticMethod(String s, Scaffold scaffold)
+		{
+			IncreaseCounter(scaffold);
 		}
 
 		public void SomeInstanceMethod()
 		{
-			IncreaseCounter();
+			throw new NotImplementedException("This method is not for a invoking.");
 		}
-		public void SomeInstanceMethod(Int32 i)
+		public void SomeInstanceMethod(Scaffold scaffold)
 		{
-			IncreaseCounter();
+			IncreaseCounter(scaffold);
 		}
-		public void SomeInstanceMethod(String s)
+		public void SomeInstanceMethod(Int32 i, Scaffold scaffold)
 		{
-			IncreaseCounter();
+			IncreaseCounter(scaffold);
+		}
+		public void SomeInstanceMethod(String s, Scaffold scaffold)
+		{
+			IncreaseCounter(scaffold);
 		}
 
 	}

@@ -51,9 +51,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Scaffold.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CommonBehaviours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AddingTest.cs" />
+    <Compile Include="AsyncBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeakDelegateProject.NetFramework\WeakDelegateProject.NetFramework.csproj">

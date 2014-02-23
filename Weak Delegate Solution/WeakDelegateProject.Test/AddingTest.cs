@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using It3xl.WeakDelegateProject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,15 +11,24 @@ namespace WeakDelegateProject.Test
 		[TestMethod]
 		public void TestMethod1()
 		{
-			var up = new WeakAction<Int32>()
+			Debug.WriteLine(1);
+
+			var scaffold = new Scaffold();
+			var up = new WeakAction<Int32, Scaffold>()
 				.Add(Scaffold.SomeStaticMethod)
-				.Add(Scaffold.Current.SomeInstanceMethod)
+				.Add(scaffold.SomeInstanceMethod)
 				;
 
-			up.Invoke(4);
+			Debug.WriteLine(2);
 
-			var resultCount = Scaffold.GetAndEmptyCounter();
-			Assert.IsTrue(2 == resultCount);
+			up.Invoke(4, scaffold);
+
+			Debug.WriteLine(3);
+
+			var resultCount = scaffold.GetAndEmptyCounter();
+			
+			Debug.WriteLine(resultCount);
+			Assert.AreEqual(2, resultCount);
 
 			//new Object().
 		}
