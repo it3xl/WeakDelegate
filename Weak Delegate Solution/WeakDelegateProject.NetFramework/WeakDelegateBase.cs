@@ -37,7 +37,24 @@ namespace It3xl.WeakDelegateProject
 			var removingItems = GetStrong(removingDelegates);
 			var currentItems = GetAliveStrongItems(_weakItems);
 
+
+
+
+
+
 			removingItems.ForEach(el => currentItems.Remove(el));
+
+
+
+
+
+
+
+
+
+
+
+
 
 			_weakItems = currentItems
 				.Select(el => el.GetWeakDelegateState())

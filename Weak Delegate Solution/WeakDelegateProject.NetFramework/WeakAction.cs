@@ -99,7 +99,7 @@ namespace It3xl.WeakDelegateProject
 
 		public WeakAction<T1, T2> Remove(Action<T1, T2> delegatesForRemoving)
 		{
-			base.Add(delegatesForRemoving);
+			base.Remove(delegatesForRemoving);
 
 			return this;
 		}
