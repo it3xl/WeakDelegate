@@ -1,0 +1,136 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+
+namespace It3xl.WeakDelegateProject
+{
+
+	// !!!
+	// Auto generated code. To change it use the WeackFunc.tt file.
+	// !!!
+
+<# 
+// The amount of the Func delegates in the .NET Framework.
+var funcsCount =
+	// Not templated Func.
+	1
+	// The templated Funcs.
+	+ 16;
+
+for(
+	// We will start from the 1 index. Func without parameter it's the simple Action.
+	var i = 1;
+	i < funcsCount;
+	i++)
+{
+	var typesList = GetTypes(i);
+ #>
+	/// <summary>
+	/// Encapsulates a weak delegate of the <see cref="Func<#= typesList.Replace("<", "{").Replace(">", "}") #>"/>.
+	/// </summary>
+	public sealed class WeakFunc<#= typesList #> : WeakDelegateBase
+	{
+		public WeakFunc(){}
+		public WeakFunc(Func<#= typesList #> inputDelegate)
+			: base(inputDelegate)
+		{
+		}
+
+		public WeakFunc<#= typesList #> Add(Func<#= typesList #> delegatesForAdding)
+		{
+			base.Add(delegatesForAdding);
+
+			return this;
+		}
+
+		public WeakFunc<#= typesList #> Remove(Func<#= typesList #> delegatesForRemoving)
+		{
+			base.Add(delegatesForRemoving);
+
+			return this;
+		}
+
+		public void Invoke(<#= GetTypedParameters(i) #>)
+		{
+			ProcessInvoke(<#= GetParameters(i) #>);
+		}
+
+		public void InvokeAsync(<#= GetTypedParameters(i) #>)
+		{
+			ProcessInvokeAsync(<#= GetParameters(i) #>);
+		}
+	}
+
+<# } #>
+
+}
+<#+ 
+
+private String GetTypes(Int32 amount){
+	if(amount == 0)
+	{
+		return String.Empty;
+	}
+
+	var builder = new StringBuilder();
+	builder.Append("<");
+
+	var typeDelimiter = ", ";
+	for (int i = 0; i < amount; i++)
+	{
+		var number = i + 1;
+		builder.AppendFormat("T{0}{1}", number, typeDelimiter);
+	}
+	builder.Remove(builder.Length - typeDelimiter.Length, typeDelimiter.Length);
+
+	builder.Append(">");
+
+	return builder.ToString();
+}
+
+private String GetTypedParameters(Int32 amount){
+	if(amount == 0)
+	{
+		return String.Empty;
+	}
+
+	var builder = new StringBuilder();
+	var typeDelimiter = ", ";
+	for (int i = 0; i < amount; i++)
+	{
+		var number = i + 1;
+		builder.AppendFormat("T{0} t{0}{1}", number, typeDelimiter);
+	}
+	builder.Remove(builder.Length - typeDelimiter.Length, typeDelimiter.Length);
+
+	return builder.ToString();
+}
+
+private String GetParameters(Int32 amount){
+	if(amount == 0)
+	{
+		return "null";
+	}
+
+	var builder = new StringBuilder();
+	builder.Append("new object[] { ");
+
+	var typeDelimiter = ", ";
+	for (int i = 0; i < amount; i++)
+	{
+		var number = i + 1;
+		builder.AppendFormat("t{0}{1}", number, typeDelimiter);
+	}
+	builder.Remove(builder.Length - typeDelimiter.Length, typeDelimiter.Length);
+
+	builder.Append(" }");
+
+	return builder.ToString();
+}
+
+ #>
+
