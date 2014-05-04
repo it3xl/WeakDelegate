@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 namespace It3xl.WeakDelegateProject.States
 {
@@ -6,7 +7,11 @@ namespace It3xl.WeakDelegateProject.States
 	{
 		Boolean Alive { get; }
 
+		MethodInfo Method { get; }
+
 		IWeakDelegateState GetWeakDelegateState();
+
+		Object Target { get; }
 
 		void Invoke(Object[] param);
 	}

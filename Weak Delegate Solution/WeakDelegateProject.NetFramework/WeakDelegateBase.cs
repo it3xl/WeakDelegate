@@ -34,27 +34,32 @@ namespace It3xl.WeakDelegateProject
 
 		protected void Remove(Delegate removingDelegates)
 		{
+			// It's excessive Delegate's hierarchy support.
 			var removingItems = GetStrong(removingDelegates);
+
+
 			var currentItems = GetAliveStrongItems(_weakItems);
 
+			// We will repeat the Delegate behaviour.
+			foreach (var removing in removingItems)
+			{
+				foreach (var hosted in currentItems.ToArray())
+				{
+					if(removing.Target != hosted.Target)
+					{
+						continue;
+					}
+					if(removing.Method != hosted.Method)
+					{
+						continue;
+					}
 
+					currentItems.Remove(hosted);
 
-
-
-
-			removingItems.ForEach(el => currentItems.Remove(el));
-
-
-
-
-
-
-
-
-
-
-
-
+					// We will remove only the first occurrence.
+					break;
+				}
+			}
 
 			_weakItems = currentItems
 				.Select(el => el.GetWeakDelegateState())

@@ -10,7 +10,9 @@ namespace It3xl.WeakDelegateProject.States
 			CheckDelegateIsSingleOrThrow(singleMethodDelegate);
 		}
 
-		public Boolean Alive{get { return true; }}
+		public Boolean Alive { get { return true; } }
+
+		public object Target { get { return null; } }
 
 		public IStrongDelegateState GetStrongDelegateState()
 		{
