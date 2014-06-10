@@ -87,11 +87,11 @@
     <Compile Include="..\WeakDelegateProject.NetFramework\WeakAction.cs">
       <Link>WeakAction.cs</Link>
     </Compile>
-    <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegateBase.cs">
-      <Link>WeakDelegateBase.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegate.cs">
+      <Link>WeakDelegate.cs</Link>
     </Compile>
-    <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegateBase.Utils.cs">
-      <Link>WeakDelegateBase.Utils.cs</Link>
+    <Compile Include="..\WeakDelegateProject.NetFramework\WeakDelegate.Utils.cs">
+      <Link>WeakDelegate.Utils.cs</Link>
     </Compile>
     <Compile Include="..\WeakDelegateProject.NetFramework\WeakFunc.cs">
       <Link>WeakFunc.cs</Link>

@@ -51,12 +51,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AddRemoveBehaviour.cs" />
+    <Compile Include="MyClassWithWeakEvent.cs" />
     <Compile Include="Scaffold.cs" />
     <Compile Include="CommonBehaviours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AddingTest.cs" />
+    <Compile Include="AddingBehaviour.cs" />
     <Compile Include="AsyncBehaviour.cs" />
     <Compile Include="DelegateBehaviour.cs" />
+    <Compile Include="EventBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeakDelegateProject.NetFramework\WeakDelegateProject.NetFramework.csproj">

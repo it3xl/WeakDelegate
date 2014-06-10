@@ -5,38 +5,44 @@ using It3xl.WeakDelegateProject.States;
 
 namespace It3xl.WeakDelegateProject
 {
-	public abstract partial class WeakDelegateBase
+	public partial class WeakDelegate
 	{
-		private static List<IWeakDelegateState> GetWeak(Delegate inputDelegates)
+		private static List<IWeakDelegateState> GetWeakFlatten(Delegate inputDelegates)
 		{
 			var weakItems = inputDelegates.GetInvocationList()
-				.Select(el =>
-				{
-					if (el.Method.IsStatic)
-					{
-						return (IWeakDelegateState)new StaticDelegateState(el);
-					}
-					return new InstanceWeakDelegateState(el);
-				})
+				.Select(GetWeakSingle)
 				.ToList();
 
 			return weakItems;
 		}
 
-		private static List<IStrongDelegateState> GetStrong(Delegate inputDelegates)
+		private static IWeakDelegateState GetWeakSingle(Delegate el)
+		{
+			if (el.Method.IsStatic)
+			{
+				return new StaticDelegateState(el);
+			}
+			return new InstanceWeakDelegateState(el);
+		}
+
+		// ReSharper disable UnusedMember.Local
+		private static List<IStrongDelegateState> GetStrongFlatten(Delegate inputDelegates)
+		// ReSharper restore UnusedMember.Local
 		{
 			var strongItems = inputDelegates.GetInvocationList()
-				.Select(el =>
-				{
-					if (el.Method.IsStatic)
-					{
-						return (IStrongDelegateState)new StaticDelegateState(el);
-					}
-					return new InstanceStrongDelegateState(el);
-				})
+				.Select(GetStrongSingle)
 				.ToList();
 
 			return strongItems;
+		}
+
+		private static IStrongDelegateState GetStrongSingle(Delegate el)
+		{
+			if (el.Method.IsStatic)
+			{
+				return new StaticDelegateState(el);
+			}
+			return new InstanceStrongDelegateState(el);
 		}
 
 		private static void RefreshAliveItems(ref List<IWeakDelegateState> weakItems, out List<IStrongDelegateState> currentAliveItems)

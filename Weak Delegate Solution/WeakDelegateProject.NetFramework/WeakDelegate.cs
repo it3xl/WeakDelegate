@@ -8,59 +8,57 @@ namespace It3xl.WeakDelegateProject
 {
 	// TODO.it3xl.com: Write comments everywhere.
 	
-	public abstract partial class WeakDelegateBase
+	public partial class WeakDelegate
 	{
 		private List<IWeakDelegateState> _weakItems;
 
-		protected WeakDelegateBase(){}
+		public WeakDelegate(){}
 
-		protected WeakDelegateBase(Delegate inputDelegates)
+		public WeakDelegate(Delegate inputDelegates)
 		{
-			var weakItems = GetWeak(inputDelegates);
+			var weakItems = GetWeakFlatten(inputDelegates);
 
 			_weakItems = weakItems;
 		}
 
-		protected void Add(Delegate addingDelegates)
+		protected void Add(Delegate addingDelegate)
 		{
-			var addingItems = GetStrong(addingDelegates);
+			var adding = GetStrongSingle(addingDelegate);
 			var currentItems = GetAliveStrongItems(_weakItems);
 
-			_weakItems = currentItems
-				.Union(addingItems)
-				.Select(el => el.GetWeakDelegateState())
-				.ToList();
+			currentItems.Add(adding);
+
+			ReplaceWeakItems(currentItems);
 		}
 
-		protected void Remove(Delegate removingDelegates)
+		protected void Remove(Delegate removingDelegate)
 		{
-			// It's excessive Delegate's hierarchy support.
-			var removingItems = GetStrong(removingDelegates);
-
-
+			var removing = GetStrongSingle(removingDelegate);
 			var currentItems = GetAliveStrongItems(_weakItems);
 
-			// We will repeat the Delegate behaviour.
-			foreach (var removing in removingItems)
+			foreach (var hosted in currentItems.ToArray())
 			{
-				foreach (var hosted in currentItems.ToArray())
+				if(removing.Target != hosted.Target)
 				{
-					if(removing.Target != hosted.Target)
-					{
-						continue;
-					}
-					if(removing.Method != hosted.Method)
-					{
-						continue;
-					}
-
-					currentItems.Remove(hosted);
-
-					// We will remove only the first occurrence.
-					break;
+					continue;
 				}
+				if(removing.Method != hosted.Method)
+				{
+					continue;
+				}
+
+				currentItems.Remove(hosted);
+
+				// We will repeat the Delegate behaviour.
+				// We will remove only the first occurrence.
+				break;
 			}
 
+			ReplaceWeakItems(currentItems);
+		}
+
+		private void ReplaceWeakItems(IEnumerable<IStrongDelegateState> currentItems)
+		{
 			_weakItems = currentItems
 				.Select(el => el.GetWeakDelegateState())
 				.ToList();

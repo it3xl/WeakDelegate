@@ -7,33 +7,95 @@ namespace WeakDelegateProject.Test
 	[TestClass]
 	public class AddRemoveBehaviour
 	{
-		private static Int32 _value = 0;
+		private static Int32 _staticValue;
+		private Int32 _inctanceValue;
 
 		[TestMethod]
-		public void AddRemoveWorks()
+		public void AddingRemovingForStaticMethod()
 		{
+			_staticValue = 0;
 			var myWeakDelegate = new WeakAction<Object, EventArgs>();
+
+			myWeakDelegate.Add(MyWeakStaticEventHandler);
+			myWeakDelegate.Invoke(null, null);
+
+			myWeakDelegate.Remove(MyWeakStaticEventHandler);
+			myWeakDelegate.Invoke(null, null);
+
+			Assert.AreEqual(1, _staticValue);
+
+
+			_staticValue = 0;
+			myWeakDelegate = new WeakAction<Object, EventArgs>();
+
+			myWeakDelegate.Add(MyWeakStaticEventHandler);
+			myWeakDelegate.Add(MyWeakStaticEventHandler);
+			myWeakDelegate.Remove(MyWeakStaticEventHandler);
+			myWeakDelegate.Invoke(null, null);
+
+			Assert.AreEqual(1, _staticValue);
+
+
+			_staticValue = 0;
+			myWeakDelegate = new WeakAction<Object, EventArgs>();
+
+			myWeakDelegate.Add(MyWeakStaticEventHandler);
+			myWeakDelegate.Add(MyWeakStaticEventHandler);
+			myWeakDelegate.Remove(MyWeakStaticEventHandler);
+			myWeakDelegate.Remove(MyWeakStaticEventHandler);
+			myWeakDelegate.Remove(MyWeakStaticEventHandler);
+			myWeakDelegate.Invoke(null, null);
+
+			Assert.AreEqual(0, _staticValue);
+		}
+
+		private void MyWeakStaticEventHandler(Object sender, EventArgs args)
+		{
+			_staticValue++;
+		}
+
+		[TestMethod]
+		public void AddingRemovingForInstanceMethod()
+		{
+			_inctanceValue = 0;
+			var myWeakDelegate = new WeakAction<Object, EventArgs>();
+
 			myWeakDelegate.Add(MyWeakEventHandler);
 			myWeakDelegate.Invoke(null, null);
+
 			myWeakDelegate.Remove(MyWeakEventHandler);
 			myWeakDelegate.Invoke(null, null);
 
-			Assert.AreEqual(1, _value);
+			Assert.AreEqual(1, _inctanceValue);
 
 
+			_inctanceValue = 0;
+			myWeakDelegate = new WeakAction<Object, EventArgs>();
+
+			myWeakDelegate.Add(MyWeakEventHandler);
+			myWeakDelegate.Add(MyWeakEventHandler);
+			myWeakDelegate.Remove(MyWeakEventHandler);
+			myWeakDelegate.Invoke(null, null);
+
+			Assert.AreEqual(1, _inctanceValue);
 
 
-			// Проверить добавление двух, удаление одного и чтоб сработал только один.
-			// Проверить идентичность повдедения делегату:
-			//   Добавление одного и того же дважды.
-			//   Удаление трех одного и того же после этого.
+			_inctanceValue = 0;
+			myWeakDelegate = new WeakAction<Object, EventArgs>();
 
+			myWeakDelegate.Add(MyWeakEventHandler);
+			myWeakDelegate.Add(MyWeakEventHandler);
+			myWeakDelegate.Remove(MyWeakEventHandler);
+			myWeakDelegate.Remove(MyWeakEventHandler);
+			myWeakDelegate.Remove(MyWeakEventHandler);
+			myWeakDelegate.Invoke(null, null);
 
+			Assert.AreEqual(0, _inctanceValue);
 		}
 
-		private static void MyWeakEventHandler(Object sender, EventArgs args)
+		private void MyWeakEventHandler(Object sender, EventArgs args)
 		{
-			_value++;
+			_inctanceValue++;
 		}
 
 

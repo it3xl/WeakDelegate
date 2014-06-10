@@ -6,10 +6,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WeakDelegateProject.Test
 {
 	[TestClass]
-	public class AddingTest
+	public class AddingBehaviour
 	{
 		[TestMethod]
-		public void TestMethod1()
+		public void AddingWorks()
 		{
 			Debug.WriteLine(1);
 

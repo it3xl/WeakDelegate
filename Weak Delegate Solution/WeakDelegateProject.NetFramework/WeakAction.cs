@@ -10,7 +10,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action"/>.
 	/// </summary>
-	public sealed class WeakAction : WeakDelegateBase
+	public sealed class WeakAction : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action inputDelegate)
@@ -46,7 +46,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1> : WeakDelegateBase
+	public sealed class WeakAction<T1> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1> inputDelegate)
@@ -82,7 +82,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2> inputDelegate)
@@ -118,7 +118,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3> inputDelegate)
@@ -154,7 +154,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4> inputDelegate)
@@ -190,7 +190,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5> inputDelegate)
@@ -226,7 +226,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6> inputDelegate)
@@ -262,7 +262,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7> inputDelegate)
@@ -298,7 +298,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8> inputDelegate)
@@ -334,7 +334,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9> inputDelegate)
@@ -370,7 +370,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> inputDelegate)
@@ -406,7 +406,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> inputDelegate)
@@ -442,7 +442,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> inputDelegate)
@@ -478,7 +478,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> inputDelegate)
@@ -514,7 +514,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> inputDelegate)
@@ -550,7 +550,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> inputDelegate)
@@ -586,7 +586,7 @@ namespace It3xl.WeakDelegateProject
 	/// <summary>
 	/// Encapsulates a weak delegate of the <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/>.
 	/// </summary>
-	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : WeakDelegateBase
+	public sealed class WeakAction<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : WeakDelegate
 	{
 		public WeakAction(){}
 		public WeakAction(Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> inputDelegate)
