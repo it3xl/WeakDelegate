@@ -24,5 +24,5 @@ It was intentionally created to support older versions of .NET.
 I.e. for .NET 4.0 and Silverlight 4.
 
 It does not require any effort to convert it to the newest .NET versions.<br/>
-Easy to adapt it to the .NET 3.0 or 3.5.<br/>
-Requires some tentions to adapt it for the **.NET 2.0** (It's a matter of time but approaches are ready).
+It is easy to adapt it to the .NET 3.0 or 3.5.<br/>
+But it requires some tentions to adapt it for the **.NET 2.0** (It's a matter of time but approaches are ready).
