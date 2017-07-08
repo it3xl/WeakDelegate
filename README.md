@@ -11,14 +11,14 @@ Have a fun to use.
 Mostly it will be used like the any [Action](http://msdn.microsoft.com/en-us/library/018hxwa8(v=vs.110).aspx) or [Func](http://msdn.microsoft.com/en-us/library/bb549151(v=vs.110).aspx) delegates of .NET Framework.
 
 You should kinda wrap your method reference by a **WeakAction** or **WeakFunk** class.
-Voila, we have your firs weak delegate and you can do your any raw (dirty) coding.
+Voila, we have your firs weak delegate and you can do any your raw (dirty) coding.
 
 ## Key tips
 On top of this project of the Weak Delegate were created projects:
 * [Weak Event](http://weakevent.codeplex.com)
 * [Weak Closure Pattern](http://weakclosure.codeplex.com)
 
-## lt;dr if you want to take some deeper
+## tl;dr if you want to take some deeper
 
 It was intentionally created to support older versions of .NET.
 I.e. for .NET 4.0 and Silverlight 4.
