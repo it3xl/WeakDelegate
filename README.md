@@ -15,8 +15,8 @@ Voila, we have your firs weak delegate and you can do any your raw (dirty) codin
 
 ## Key tips
 On top of this project of the Weak Delegate were created projects:
-* [Weak Event](http://weakevent.codeplex.com)
-* [Weak Closure Pattern](http://weakclosure.codeplex.com)
+* [Weak Event](https://github.com/it3xl/WeakEvent)
+* [Weak Closure Pattern](https://github.com/it3xl/Weak-Closure-Pattern)
 
 ## tl;dr if you want to take some deeper
 
