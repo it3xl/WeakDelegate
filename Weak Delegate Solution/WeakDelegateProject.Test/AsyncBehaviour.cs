@@ -9,7 +9,7 @@ namespace WeakDelegateProject.Test
 		[TestMethod]
 		public void ExceptionAtAnyDelegateAreRethrowingGlobaly()
 		{
-			// TODO.it3xl.com: AggregateException is wanted.
+			// TODO.it3xl.ru: AggregateException is wanted.
 		}
 	}
 }
